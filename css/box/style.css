@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.box {
+    width: 480px;
+    height: 480px;
+    padding-top: 40px;
+    padding-left: 50px;
+    background-color: #0066ff;
+    color: #ffffff;
+}
