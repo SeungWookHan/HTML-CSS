@@ -1,0 +1,22 @@
+/*
+inline에서는 width, height, padding-top, padding-bottom,
+border-top, border-bottom, margin-top, margin-bottm
+사용 불가!!
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #212529;
+}
+
+span {
+    display: inline-block;
+    color: #fff;
+    background-color: #0066ff;
+    width: 200px;
+    height: 300px;
+}
