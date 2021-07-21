@@ -11,6 +11,18 @@
 텍스트나 이미지같은 '인라인' 요소는 플로트를 알고 피해감(집 나간 자식을 안다!!)
 
 요즘에는 거의 안 쓰기는 하지만! 알기는 알아야함(마치 리액트의 클래스 컴포넌트 같이?!)
+
+이에 대한 해결방법
+1. 부모 요소에? overflow:hidden 하면 됨
+2. Clearfix 하면됨 - 다른 요소에게 줌으로써 float에 대해 인지하게 함 - 부모 요소에서 전체 자식의 요소 다시 확인 가능(float 요소는 못 보더라도)
+    - left, right, both를 값으로 가질 수 있음
+    - css의 fake 요소(::befor, ::after)를 활용하여 깔끔하게 가능(빈 div 태그 없이)
+      clear는 diaplay가 block인 요소에만 사용 가능!!
+
+css의 fake 요소(Pseudo Element)
+    - 요소::before
+    - 요소::after
+    여기서 content는 필수!!
 */
 * {
     box-sizing: border-box;
@@ -26,6 +38,13 @@ body {
     width: 400px;
     margin: 0 auto;
     background-color: #eff2f7;
+    /* overflow:hidden; */
+}
+
+.parent::after {
+    content: "";
+    display: block;
+    clear: left;
 }
 
 .child  {
@@ -53,4 +72,8 @@ body {
 .other {
     background-color: black;
     color: white;
+}
+
+.red::before {
+    content: 'dsadad'
 }
