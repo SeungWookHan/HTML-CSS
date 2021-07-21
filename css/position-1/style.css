@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  h1 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #273444;
+  }
+  
+  /* ▼ WHERE YOUR CODE BEGINS */
+  .user-card {
+    max-width: 240px;
+    padding: 8px 12px;
+    border: 1px solid #e5eaef;
+    border-radius: 4px;
+  }
+  .user-card::after{
+    content: "";
+    display: block;
+    clear: left;
+  }
+.user-photo,
+.user-name {
+    float: left;
+}
+
+.user-photo {
+    position: relative;
+    margin-right: 12px;
+
+        /* user-status가 user-photo를 기준으로 우측 하단에 오기를 
+    바라기에 relative로 설정*/
+}
+
+.user-photo img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* 이미지는 inline이지만 사진 자체가 사이즈를 가지기에 크기 설정 가능
+    하지만 display block을 미리 주는 게 더 좋을 수 있음 */
+}
+
+.user-status {
+    position: absolute;
+    /* position absolute하면 자연스럽게 display block */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #21d891;
+
+    /* 우측 하단으로 옮겨줌 */
+    right: -2px;
+    bottom: -2px;
+}
+/* position 팁
+1. 뷰포트를 기준으로 옮긴다: fixed
+2. 이 요소를 떼어내서 다른 위치로 옮기는가: absolute
+3. 기존 위치에서 띄엄띄엄 옮기는가: relative 
+*/
+.user-name {
+    padding: 8px 0;
+}
+
