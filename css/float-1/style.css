@@ -1,0 +1,66 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+      height: 100vh;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: -0.02em;
+    background-color: black;
+  }
+  
+  a {
+    font-size: 18px;
+    line-height: 20px;
+    color: #8492a6;
+    text-decoration: none;
+  }
+  
+  /* ▼ WHERE YOUR CODE BEGINS */
+  ul {
+      list-style-type: none;
+      padding-left: 0;
+  }
+
+  .tab-menu {
+      max-width: 540px;
+      border-bottom: 1px solid #e5eaef;
+      background-color: white;
+  }
+
+  .tab-menu::after {
+    content: "";
+    display: block;
+    clear: left
+  }
+
+  .tab-menu-item {
+    float: left;
+    margin-right: 16px;
+  }
+  /* block을 제외하고는 가로 배치에 다 활용 가능하지만
+  inline 경우에는 여백 주기가 안되기에 패스
+  inline-block도 ㄱㅊ지만 float 세션이기에 float으로 진행
+  */
+
+  .tab-menu-item a {
+    display: block;
+    padding: 16px 20px;
+  }
+  /*
+  패딩을 줄때 a 영역에 주어야지 전체 영역 클릭시 특정 로직 처리하게 가능!(타겟 영역 확장)
+  li 요소에 준다면 a 영역이 텍스트로 좁혀짐!
+
+  a태그는 inline 요소이기에 display 요소 바꿈
+  */
+
+  .tab-menu-item.selected {
+    border-bottom: 2px solid #2860e1;
+  }
+
+  .tab-menu-item.selected a {
+      color: #2860e1;
+      font-weight: 500;
+  }
